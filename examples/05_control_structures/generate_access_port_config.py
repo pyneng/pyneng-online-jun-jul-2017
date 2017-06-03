@@ -9,12 +9,12 @@ fast_int = {'access':{'0/12':'10',
                       '0/17':'150'}}
 
 for intf in fast_int['access']:
-    print 'interface FastEthernet' + intf
+    print('interface FastEthernet' + intf)
     for command in access_template:
         if command.endswith('access vlan'):
-            print ' %s %s' % (command, fast_int['access'][intf])
+            print(' {} {}'.format( command, fast_int['access'][intf] ))
         else:
-            print ' %s' % command
+            print(' {}'.format( command ))
 
 """
 Example:

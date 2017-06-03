@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-
+
+interface = input('Enter interface type and number: ')
+vlan = int(input('Enter VLAN number: '))
 
 access_template = ['switchport mode access',
                    'switchport access vlan {}',
@@ -6,5 +8,6 @@ access_template = ['switchport mode access',
                    'spanning-tree portfast',
                    'spanning-tree bpduguard enable']
 
-print("Конфигурация интерфейса в режиме access:")
-print( '\n'.join(access_template).format(5) )
+print('\n' + '-' * 30)
+print('interface {}'.format( interface ))
+print('\n'.join(access_template).format( vlan ))
