@@ -2,7 +2,7 @@
 import sqlite3
 import sys
 
-db_filename = 'dhcp_snooping.db'
+DB_FILENAME = 'dhcp_snooping.db'
 
 query_dict = {'vlan': "select * from dhcp where vlan = ?",
               'mac': "select * from dhcp where mac = ?",
