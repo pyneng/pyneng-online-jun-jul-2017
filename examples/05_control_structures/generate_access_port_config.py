@@ -3,10 +3,10 @@ access_template = ['switchport mode access',
                    'spanning-tree portfast',
                    'spanning-tree bpduguard enable']
 
-fast_int = {'access':{'0/12':'10',
-                      '0/14':'11',
-                      '0/16':'17',
-                      '0/17':'150'}}
+fast_int = {'access':{'0/12':10,
+                      '0/14':11,
+                      '0/16':17,
+                      '0/17':150}}
 
 for intf in fast_int['access']:
     print('interface FastEthernet' + intf)
