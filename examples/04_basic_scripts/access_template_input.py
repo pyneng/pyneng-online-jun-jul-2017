@@ -1,6 +1,6 @@
 
 interface = input('Enter interface type and number: ')
-vlan = int(input('Enter VLAN number: '))
+vlan = input('Enter VLAN number: ')
 
 access_template = ['switchport mode access',
                    'switchport access vlan {}',

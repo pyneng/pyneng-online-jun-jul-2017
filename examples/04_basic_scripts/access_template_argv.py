@@ -9,4 +9,4 @@ access_template = ['switchport mode access',
                    'spanning-tree bpduguard enable']
 
 print('interface {}'.format( interface ))
-print('\n'.join(access_template).format( int(vlan) ))
+print('\n'.join(access_template).format(vlan))
