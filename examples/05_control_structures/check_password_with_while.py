@@ -16,7 +16,8 @@ while not pass_OK:
         print('Пароль для пользователя {} установлен'.format( username ))
         pass_OK = True
 
-"""
+
+'''
 Example:
 $ python check_password_with_while.py
 Введите имя пользователя: nata
@@ -28,4 +29,4 @@ $ python check_password_with_while.py
 
 Введите пароль еще раз: 123345345345
 Пароль для пользователя nata установлен
-"""
+'''
