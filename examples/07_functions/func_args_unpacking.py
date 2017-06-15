@@ -11,12 +11,13 @@ def config_interface(intf_name, ip_address, cidr_mask):
 
     mask_bits = int(cidr_mask.split('/')[-1])
     bin_mask = '1'*mask_bits + '0'*(32-mask_bits)
-    dec_mask = '.'.join([ str(int(bin_mask[i:i+8], 2)) for i in [0,8,16,24] ])
+    dec_mask = [str(int(bin_mask[i:i+8], 2)) for i in range(0,25,8)]
+    dec_mask_str = '.'.join(dec_mask)
 
-    result.append(ip_addr.format( ip_address, dec_mask ))
+    result.append(ip_addr.format( ip_address, dec_mask_str ))
     return result
 
-#print config_interface('Fa0/1', '10.0.1.1', '/25')
+#print(config_interface('Fa0/1', '10.0.1.1', '/25'))
 
 interfaces_info = [['Fa0/1', '10.0.1.1', '/24'],
                    ['Fa0/2', '10.0.2.1', '/24'],
