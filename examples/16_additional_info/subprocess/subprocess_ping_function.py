@@ -16,10 +16,10 @@ def ping_ip(ip_address):
         try:
             output = subprocess.check_output(['ping', '-c', '3', '-n', ip_address],
                                              stderr=temp)
-            return 0, output
+            return 0, output.decode('utf-8')
         except subprocess.CalledProcessError as e:
             temp.seek(0)
-            return e.returncode, temp.read()
+            return e.returncode, temp.read().decode('utf-8')
 
 print(ping_ip('8.8.8.8'))
 print(ping_ip('a'))

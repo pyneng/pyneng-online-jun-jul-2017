@@ -8,9 +8,10 @@ def generate_access_cfg(sw_dict):
         result.append('interface FastEthernet' + intf)
         for command in sw_int_templates.access_template:
             if command.endswith('access vlan'):
-                result.append(' {} {}'.format( command, sw_dict['access'][intf] ))
+                result.append(' {} {}'.format(command,
+                                              sw_dict['access'][intf]))
             else:
-                result.append(' {}'.format( command ))
+                result.append(' {}'.format(command))
     return result
 
 
