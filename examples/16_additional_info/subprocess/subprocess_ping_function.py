@@ -21,5 +21,5 @@ def ping_ip(ip_address):
             temp.seek(0)
             return e.returncode, temp.read()
 
-print ping_ip('8.8.8.8')
-print ping_ip('a')
+print(ping_ip('8.8.8.8'))
+print(ping_ip('a'))
