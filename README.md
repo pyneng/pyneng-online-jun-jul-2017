@@ -7,4 +7,4 @@
 * [exercises](https://github.com/pyneng/pyneng-online-jun-jul-2017/tree/master/exercises) - домашние задания
 * [study](https://github.com/pyneng/pyneng-online-jun-jul-2017/tree/master/study) - ссылки и документы по обучению
 * [presentations](https://github.com/pyneng/pyneng-online-jun-jul-2017/tree/master/presentations) - PDF версии презентаций
-* [pyneng-book](https://github.com/pyneng/pyneng-online-jun-jul-2017/tree/master/pyneng-book) - PDF версия книги (для Pythoon 3.6)
+* [pyneng-book](https://github.com/pyneng/pyneng-online-jun-jul-2017/tree/master/pyneng-book) - PDF версия книги (для Python 3.6)
