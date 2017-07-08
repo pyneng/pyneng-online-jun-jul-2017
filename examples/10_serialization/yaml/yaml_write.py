@@ -15,7 +15,7 @@ access_template = ['switchport mode access',
 to_yaml = {'trunk':trunk_template, 'access':access_template}
 
 with open('sw_templates.yaml', 'w') as f:
-    f.write(yaml.dump(to_yaml))
+    yaml.dump(to_yaml, f)
 
 with open('sw_templates.yaml') as f:
     print(f.read())
