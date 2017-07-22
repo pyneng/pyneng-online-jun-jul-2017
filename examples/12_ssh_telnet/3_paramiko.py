@@ -25,12 +25,13 @@ for IP in DEVICES_IP:
 
     ssh.send("terminal length 0\n")
     time.sleep(1)
-    print(ssh.recv(1000).decode('utf-8'))
+    ssh.recv(1000).decode('utf-8')
 
     ssh.send(COMMAND + "\n")
     time.sleep(2)
     result = ssh.recv(5000).decode('utf-8')
     print(result)
+    ssh.close()
 
 
 """

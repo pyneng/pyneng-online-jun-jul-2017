@@ -18,8 +18,9 @@ for IP in DEVICES_IP:
                      'password':PASSWORD,
                      'secret':ENABLE_PASS,
                      'verbose': True}
-    ssh = ConnectHandler(**DEVICE_PARAMS)
-    ssh.enable()
+    telnet = ConnectHandler(**DEVICE_PARAMS)
+    telnet.enable()
 
-    result = ssh.send_command(COMMAND)
+    result = telnet.send_command(COMMAND)
     print(result)
+    telnet.disconnect()

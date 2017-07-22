@@ -30,13 +30,8 @@ def conn_threads(function, devices, command):
     for th in threads:
         th.join()
 
-    # Эта часть нам не нужна, так как, при использовании списка,
-    # мы просто можем вернуть его
-    #results = []
-    #for t in threads:
-    #    results.append(q.get())
-
     return q
 
-print(conn_threads(connect_ssh, devices['routers'], COMMAND))
-
+result = conn_threads(connect_ssh, devices['routers'], COMMAND)
+from pprint import pprint
+pprint(result)

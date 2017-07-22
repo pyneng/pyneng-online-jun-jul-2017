@@ -23,6 +23,7 @@ for IP in DEVICES_IP:
 
     result = ssh.send_command(COMMAND)
     print(result)
+    ssh.disconnect()
 
 """
 Examples:

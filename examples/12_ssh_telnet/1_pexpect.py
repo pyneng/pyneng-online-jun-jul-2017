@@ -31,6 +31,8 @@ for IP in DEVICES_IP:
     t.expect('#')
     print(t.before.decode('utf-8'))
 
+    t.close()
+
 """
 Example:
 

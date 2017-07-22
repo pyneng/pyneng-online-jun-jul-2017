@@ -30,6 +30,7 @@ for IP in DEVICES_IP:
 
     output = t.read_very_eager().decode('utf-8')
     print(output)
+    t.close()
 
 """
 Example:
