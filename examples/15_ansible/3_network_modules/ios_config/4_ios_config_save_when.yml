@@ -14,13 +14,5 @@
         lines:
           - login local
           - transport input ssh
+        save_when: modified
         provider: "{{ cli }}"
-      register: cfg
-
-    - name: Save config
-      ios_command:
-        commands:
-          - write
-        provider: "{{ cli }}"
-      when: cfg.changed
-
