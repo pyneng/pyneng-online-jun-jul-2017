@@ -16,4 +16,4 @@
       register: show_result
 
     - name: Debug registered var
-      debug: var=show_result.stdout_lines
+      debug: var=show_result.stdout_lines[1]
