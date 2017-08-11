@@ -18,8 +18,6 @@
 from jinja2 import Environment, FileSystemLoader
 import yaml
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
 
 TEMPLATE_DIR, template = sys.argv[1].split('/')
 VARS_FILE = sys.argv[2]
