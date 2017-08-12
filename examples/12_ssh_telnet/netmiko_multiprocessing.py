@@ -39,5 +39,5 @@ def conn_processes(function, devices, command):
     return results
 
 
-pprint((conn_processes(connect_ssh, devices['routers'], COMMAND)))
+pprint(conn_processes(connect_ssh, devices['routers'], COMMAND))
 
