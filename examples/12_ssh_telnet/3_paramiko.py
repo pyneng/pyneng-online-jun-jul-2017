@@ -17,21 +17,20 @@ for IP in DEVICES_IP:
 
     client.connect(hostname=IP, username=USER, password=PASSWORD,
                    look_for_keys=False, allow_agent=False)
-    ssh = client.invoke_shell()
 
-    ssh.send("enable\n")
-    ssh.send(ENABLE_PASS + '\n')
-    time.sleep(1)
+    with client.invoke_shell() as ssh:
+        ssh.send("enable\n")
+        ssh.send(ENABLE_PASS + '\n')
+        time.sleep(1)
 
-    ssh.send("terminal length 0\n")
-    time.sleep(1)
-    ssh.recv(1000).decode('utf-8')
+        ssh.send("terminal length 0\n")
+        time.sleep(1)
+        ssh.recv(1000).decode('utf-8')
 
-    ssh.send(COMMAND + "\n")
-    time.sleep(2)
-    result = ssh.recv(5000).decode('utf-8')
-    print(result)
-    ssh.close()
+        ssh.send(COMMAND + "\n")
+        time.sleep(2)
+        result = ssh.recv(5000).decode('utf-8')
+        print(result)
 
 
 """

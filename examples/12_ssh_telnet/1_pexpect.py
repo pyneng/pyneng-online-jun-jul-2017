@@ -10,28 +10,28 @@ ENABLE_PASS = getpass.getpass(prompt='Enter enable password: ')
 DEVICES_IP = ['192.168.100.1','192.168.100.2','192.168.100.3']
 
 for IP in DEVICES_IP:
-    print("Connection to device {}".format( IP ))
-    t = pexpect.spawn('ssh {}@{}'.format( USER, IP ))
+    print("Connection to device {}".format(IP))
+    with pexpect.spawn('ssh {}@{}'.format(USER, IP)) as ssh:
 
-    t.expect('Password:')
-    t.sendline(PASSWORD)
+        ssh.expect('Password:')
+        ssh.sendline(PASSWORD)
 
-    t.expect('>')
-    t.sendline('enable')
+        ssh.expect('>')
+        ssh.sendline('enable')
 
-    t.expect('Password:')
-    t.sendline(ENABLE_PASS)
+        ssh.expect('Password:')
+        ssh.sendline(ENABLE_PASS)
 
-    t.expect('#')
-    t.sendline("terminal length 0")
+        ssh.expect('#')
+        ssh.sendline("terminal length 0")
 
-    t.expect('#')
-    t.sendline(COMMAND)
+        ssh.expect('#')
+        ssh.sendline(COMMAND)
 
-    t.expect('#')
-    print(t.before.decode('utf-8'))
+        ssh.expect('#')
+        print(ssh.before.decode('utf-8'))
 
-    t.close()
+
 
 """
 Example:

@@ -11,26 +11,26 @@ ENABLE_PASS = getpass.getpass(prompt='Enter enable password: ').encode('utf-8')
 DEVICES_IP = ['192.168.100.1','192.168.100.2','192.168.100.3']
 
 for IP in DEVICES_IP:
-    print("Connection to device {}".format( IP ))
-    t = telnetlib.Telnet(IP)
+    print("Connection to device {}".format(IP))
+    with telnetlib.Telnet(IP) as t:
 
-    t.read_until(b"Username:")
-    t.write(USER + b'\n')
+        t.read_until(b"Username:")
+        t.write(USER + b'\n')
 
-    t.read_until(b"Password:")
-    t.write(PASSWORD + b'\n')
-    t.write(b"enable\n")
+        t.read_until(b"Password:")
+        t.write(PASSWORD + b'\n')
+        t.write(b"enable\n")
 
-    t.read_until(b"Password:")
-    t.write(ENABLE_PASS + b'\n')
-    t.write(b"terminal length 0\n")
-    t.write(COMMAND + b'\n')
+        t.read_until(b"Password:")
+        t.write(ENABLE_PASS + b'\n')
+        t.write(b"terminal length 0\n")
+        t.write(COMMAND + b'\n')
 
-    time.sleep(5)
+        time.sleep(5)
 
-    output = t.read_very_eager().decode('utf-8')
-    print(output)
-    t.close()
+        output = t.read_very_eager().decode('utf-8')
+        print(output)
+
 
 """
 Example:
