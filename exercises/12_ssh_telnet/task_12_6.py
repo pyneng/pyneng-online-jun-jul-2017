@@ -9,7 +9,14 @@
  * переделать функцию send_commands, чтобы использовалась очередь и функция conn_processes по-прежнему возвращала словарь с результатами.
  * Проверить работу со списком команд, с командами из файла, с командой show
 
+Подсказка: multiprocessing.Process может передавать функции не только позиционные аргументы, но и ключевые:
+def conn_processes(function, arg1, arg2, **kwargs):
 
+    for some in something:
+        p = multiprocessing.Process(target=function,
+                                    args=(arg1, arg2),
+                                    kwargs=kwargs)
+                                    
 Пример из раздела:
 '''
 
