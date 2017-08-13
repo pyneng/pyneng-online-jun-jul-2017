@@ -9,6 +9,14 @@
  * переделать функцию send_commands, чтобы использовалась очередь и функция conn_threads по-прежнему возвращала словарь с результатами.
  * Проверить работу со списком команд, с командами из файла, с командой show
 
+Подсказка: threading.Thread может передавать функции не только позиционные аргументы, но и ключевые:
+def conn_threads(function, arg1, arg2, **kwargs):
+
+    for some in something:
+        th = threading.Thread(target=function,
+                              args=(arg1, arg2),
+                              kwargs=kwargs)
+
 '''
 
 import threading
